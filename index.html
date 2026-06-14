@@ -1,0 +1,789 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Student e-Portfolio of MANISSHA RAJASEGAR, IT Programme, showcasing labs, projects, reflections, skills, and resources." />
+  <title>MANISSHA RAJASEGAR | Student e-Portfolio</title>
+
+  <style>
+    :root {
+      --primary: #2e7d32;
+      --primary-dark: #1b5e20;
+      --primary-light: #e8f5e9;
+      --accent: #66bb6a;
+      --text: #1f2937;
+      --muted: #6b7280;
+      --bg: #f8fafc;
+      --card: #ffffff;
+      --border: #dbe7dc;
+      --shadow: 0 18px 40px rgba(31, 41, 55, 0.10);
+      --radius: 22px;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: 90px;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.7;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .container {
+      width: min(1120px, 92%);
+      margin: 0 auto;
+    }
+
+    header {
+      min-height: 100vh;
+      background:
+        radial-gradient(circle at top left, rgba(102, 187, 106, 0.35), transparent 35%),
+        linear-gradient(135deg, #ffffff 0%, #e8f5e9 45%, #f8fafc 100%);
+      display: flex;
+      align-items: center;
+      padding-top: 90px;
+    }
+
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: rgba(255, 255, 255, 0.92);
+      backdrop-filter: blur(14px);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .nav-inner {
+      width: min(1120px, 92%);
+      margin: 0 auto;
+      min-height: 74px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
+
+    .brand {
+      font-weight: 800;
+      color: var(--primary-dark);
+      letter-spacing: 0.4px;
+      white-space: nowrap;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      list-style: none;
+    }
+
+    .nav-links a {
+      display: inline-block;
+      padding: 10px 14px;
+      border-radius: 999px;
+      color: var(--text);
+      font-weight: 700;
+      font-size: 0.95rem;
+      transition: 0.25s ease;
+    }
+
+    .nav-links a:hover,
+    .nav-links a:focus {
+      background: var(--primary-light);
+      color: var(--primary-dark);
+      outline: none;
+    }
+
+    .menu-toggle {
+      display: none;
+      border: none;
+      background: var(--primary);
+      color: #ffffff;
+      padding: 10px 14px;
+      border-radius: 12px;
+      font-weight: 800;
+      cursor: pointer;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.25fr 0.75fr;
+      gap: 42px;
+      align-items: center;
+      padding: 64px 0;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--primary-light);
+      color: var(--primary-dark);
+      padding: 8px 14px;
+      border-radius: 999px;
+      font-weight: 800;
+      margin-bottom: 18px;
+      border: 1px solid var(--border);
+    }
+
+    h1 {
+      font-size: clamp(2.4rem, 6vw, 5rem);
+      line-height: 1.05;
+      margin-bottom: 18px;
+      color: #102a16;
+    }
+
+    .hero-text {
+      font-size: 1.12rem;
+      color: var(--muted);
+      max-width: 720px;
+      margin-bottom: 26px;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      margin-top: 26px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: 12px 18px;
+      border-radius: 999px;
+      font-weight: 800;
+      border: 2px solid var(--primary);
+      transition: 0.25s ease;
+      cursor: pointer;
+    }
+
+    .btn-primary {
+      background: var(--primary);
+      color: #ffffff;
+    }
+
+    .btn-primary:hover,
+    .btn-primary:focus {
+      background: var(--primary-dark);
+      border-color: var(--primary-dark);
+      transform: translateY(-2px);
+      outline: none;
+    }
+
+    .btn-secondary {
+      background: transparent;
+      color: var(--primary-dark);
+    }
+
+    .btn-secondary:hover,
+    .btn-secondary:focus {
+      background: var(--primary-light);
+      transform: translateY(-2px);
+      outline: none;
+    }
+
+    .profile-card {
+      background: rgba(255, 255, 255, 0.86);
+      border: 1px solid var(--border);
+      box-shadow: var(--shadow);
+      border-radius: var(--radius);
+      padding: 28px;
+    }
+
+    .avatar {
+      width: 112px;
+      height: 112px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--primary), var(--accent));
+      display: grid;
+      place-items: center;
+      color: #ffffff;
+      font-size: 2.1rem;
+      font-weight: 900;
+      margin-bottom: 22px;
+      box-shadow: 0 12px 24px rgba(46, 125, 50, 0.25);
+    }
+
+    .info-list {
+      list-style: none;
+      display: grid;
+      gap: 12px;
+    }
+
+    .info-list li {
+      padding: 12px 14px;
+      background: var(--primary-light);
+      border-radius: 14px;
+      border: 1px solid var(--border);
+    }
+
+    .info-list strong {
+      color: var(--primary-dark);
+      display: block;
+      font-size: 0.84rem;
+      text-transform: uppercase;
+      letter-spacing: 0.7px;
+    }
+
+    section {
+      padding: 86px 0;
+    }
+
+    .section-heading {
+      max-width: 780px;
+      margin-bottom: 34px;
+    }
+
+    .section-heading span {
+      color: var(--primary);
+      font-weight: 900;
+      text-transform: uppercase;
+      letter-spacing: 1.2px;
+      font-size: 0.85rem;
+    }
+
+    h2 {
+      font-size: clamp(2rem, 4vw, 3.2rem);
+      line-height: 1.15;
+      margin: 8px 0 14px;
+      color: #102a16;
+    }
+
+    .section-heading p {
+      color: var(--muted);
+      font-size: 1.05rem;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 24px;
+    }
+
+    .card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 24px;
+      box-shadow: 0 12px 28px rgba(31, 41, 55, 0.07);
+      transition: 0.25s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow);
+    }
+
+    .card h3 {
+      color: var(--primary-dark);
+      font-size: 1.35rem;
+      margin-bottom: 10px;
+    }
+
+    .card p {
+      color: var(--muted);
+      margin-bottom: 14px;
+    }
+
+    .tag {
+      display: inline-block;
+      background: var(--primary-light);
+      color: var(--primary-dark);
+      border: 1px solid var(--border);
+      border-radius: 999px;
+      padding: 6px 12px;
+      font-size: 0.84rem;
+      font-weight: 800;
+      margin-bottom: 14px;
+    }
+
+    .video-wrap {
+      position: relative;
+      width: 100%;
+      aspect-ratio: 16 / 9;
+      border-radius: 16px;
+      overflow: hidden;
+      background: #d1d5db;
+      margin: 16px 0;
+      border: 1px solid var(--border);
+    }
+
+    .video-wrap iframe {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      border: 0;
+    }
+
+    .reflection {
+      background: #f6fbf6;
+      border-left: 5px solid var(--primary);
+      border-radius: 14px;
+      padding: 14px 16px;
+      margin-top: 16px;
+    }
+
+    .reflection strong {
+      color: var(--primary-dark);
+    }
+
+    .project-card {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .project-card .btn {
+      width: fit-content;
+      margin-top: auto;
+    }
+
+    .journey-box {
+      background: linear-gradient(135deg, #ffffff, #e8f5e9);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 32px;
+      box-shadow: var(--shadow);
+    }
+
+    .skills-list,
+    .resources-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      list-style: none;
+    }
+
+    .skills-list li,
+    .resources-list li {
+      background: #ffffff;
+      border: 1px solid var(--border);
+      color: var(--primary-dark);
+      border-radius: 999px;
+      padding: 10px 15px;
+      font-weight: 800;
+      box-shadow: 0 8px 18px rgba(31, 41, 55, 0.05);
+    }
+
+    footer {
+      background: #102a16;
+      color: #ffffff;
+      padding: 34px 0;
+      text-align: center;
+    }
+
+    footer p {
+      color: rgba(255, 255, 255, 0.86);
+      margin: 4px 0;
+    }
+
+    .back-top {
+      position: fixed;
+      right: 18px;
+      bottom: 18px;
+      width: 46px;
+      height: 46px;
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      background: var(--primary);
+      color: #ffffff;
+      font-weight: 900;
+      box-shadow: var(--shadow);
+      border: none;
+      cursor: pointer;
+    }
+
+    .back-top:hover,
+    .back-top:focus {
+      background: var(--primary-dark);
+      outline: 3px solid rgba(102, 187, 106, 0.45);
+    }
+
+    @media (max-width: 860px) {
+      .menu-toggle {
+        display: inline-block;
+      }
+
+      .nav-inner {
+        flex-wrap: wrap;
+        padding: 14px 0;
+      }
+
+      .nav-links {
+        display: none;
+        width: 100%;
+        flex-direction: column;
+        align-items: stretch;
+        padding-bottom: 10px;
+      }
+
+      .nav-links.open {
+        display: flex;
+      }
+
+      .nav-links a {
+        width: 100%;
+        border-radius: 12px;
+      }
+
+      .hero-grid,
+      .grid {
+        grid-template-columns: 1fr;
+      }
+
+      header {
+        min-height: auto;
+      }
+    }
+
+    @media (max-width: 520px) {
+      section {
+        padding: 64px 0;
+      }
+
+      .card,
+      .profile-card,
+      .journey-box {
+        padding: 20px;
+      }
+
+      .hero-actions {
+        flex-direction: column;
+      }
+
+      .btn {
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <nav aria-label="Main navigation">
+    <div class="nav-inner">
+      <a class="brand" href="#home" aria-label="Go to home section">MANISSHA RAJASEGAR</a>
+      <button class="menu-toggle" type="button" aria-label="Toggle navigation menu" aria-expanded="false">Menu</button>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#labs">Labs</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#reflection">Reflection</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#resources">Resources</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <header id="home">
+    <div class="container hero-grid">
+      <div>
+        <p class="eyebrow">SDG 3: Good Health and Well-Being</p>
+        <h1>Student e-Portfolio</h1>
+        <p class="hero-text">
+          Hello, my name is MANISSHA RAJASEGAR, an IT student who is passionate about building meaningful and user-friendly digital solutions. This e-Portfolio showcases my mobile application labs, project development journey, technical skills, and personal reflection throughout the course. Through these works, I aim to show how technology can support healthier, more informed, and more sustainable daily living.
+        </p>
+        <p class="hero-text">
+          My chosen Sustainable Development Goal is <strong>SDG 3</strong>, because digital health solutions can improve awareness, encourage better habits, and support well-being through accessible technology.
+        </p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="#labs">View My Labs</a>
+          <a class="btn btn-secondary" href="#projects">View Projects</a>
+        </div>
+      </div>
+
+      <aside class="profile-card" aria-label="Student profile summary">
+        <div class="avatar" role="img" aria-label="Initials MR representing MANISSHA RAJASEGAR">MR</div>
+        <ul class="info-list">
+          <li><strong>Name</strong> MANISSHA RAJASEGAR</li>
+          <li><strong>Matric No</strong> A212743</li>
+          <li><strong>Programme</strong> IT</li>
+          <li><strong>Instructor</strong> DR NAZATUL</li>
+        </ul>
+      </aside>
+    </div>
+  </header>
+
+  <main>
+    <section id="labs">
+      <div class="container">
+        <div class="section-heading">
+          <span>Coursework</span>
+          <h2>Labs</h2>
+          <p>These lab activities helped me build my foundation in mobile application development, from interface design to data storage using Room.</p>
+        </div>
+
+        <div class="grid">
+          <article class="card">
+            <span class="tag">Lab 1</span>
+            <h3>Lab 1: UI</h3>
+            <p>This lab focused on creating a basic user interface with proper structure, layout arrangement, and readable visual design.</p>
+            <div class="video-wrap">
+            <iframe
+            src="https://youtu.be/m1Yy6m1czjM?si=XJht8XqzgPfEBzHc"
+            title="Lab 1 UI YouTube video"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            referrerpolicy="strict-origin-when-cross-origin"
+            allowfullscreen
+            loading="lazy">
+          </iframe>
+            </div>
+            <div class="reflection">
+              <p><strong>Reflection:</strong> This lab helped me understand that a good application starts with a clear and simple interface. I learned how spacing, alignment, and component placement can affect the user experience. It also reminded me that design should be both attractive and functional.</p>
+            </div>
+          </article>
+
+          <article class="card">
+            <span class="tag">Lab 2</span>
+            <h3>Lab 2: Interaction</h3>
+            <p>This lab introduced interactive elements that allow users to perform actions and receive feedback from the application.</p>
+            <div class="video-wrap">
+              <iframe
+                src="https://www.youtube.com/embed/74CA9j7soFc"
+                title="Lab 2: Interaction"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                referrerpolicy="strict-origin-when-cross-origin"
+                allowfullscreen
+                loading="lazy">
+              </iframe>
+
+            </div>
+            <div class="reflection">
+              <p><strong>Reflection:</strong> Through this lab, I learned how interaction makes an application feel more useful and responsive. I became more confident in handling buttons, user input, and simple event actions. This experience showed me the importance of giving users clear feedback after every action.</p>
+            </div>
+          </article>
+
+          <article class="card">
+            <span class="tag">Lab 3</span>
+            <h3>Lab 3: Material Design</h3>
+            <p>This lab explored Material Design principles to create a more consistent, modern, and user-friendly mobile interface.</p>
+            <div class="video-wrap">
+              <iframe
+                src="https://www.youtube.com/embed/MlsK0OWCx7Q"
+                title="Lab 3: Material Design"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                referrerpolicy="strict-origin-when-cross-origin"
+                allowfullscreen
+                loading="lazy">
+              </iframe>
+            </div>
+            <div class="reflection">
+              <p><strong>Reflection:</strong> This lab helped me understand how design guidelines can make an app look professional and easier to use. I learned to apply consistent colours, components, and visual hierarchy. It also taught me that small design improvements can make a big difference in user confidence.</p>
+            </div>
+          </article>
+
+          <article class="card">
+            <span class="tag">Lab 4</span>
+            <h3>Lab 4: Navigation</h3>
+            <p>This lab focused on moving between screens and organising application content through proper navigation flow.</p>
+            <div class="video-wrap">
+              <iframe
+                src="https://www.youtube.com/embed/hE29bl6hmts"
+                title="Lab 4: Navigation"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                referrerpolicy="strict-origin-when-cross-origin"
+                allowfullscreen
+                loading="lazy">
+              </iframe>
+            </div>
+            <div class="reflection">
+              <p><strong>Reflection:</strong> I learned that navigation is important because users need to move through the application smoothly without confusion. This lab helped me understand how screens connect and how information should be arranged logically. It also improved my ability to plan app flow before coding.</p>
+            </div>
+          </article>
+
+          <article class="card">
+            <span class="tag">Lab 5</span>
+            <h3>Lab 5: Room</h3>
+            <p>This lab introduced local database storage using Room, allowing application data to be saved and managed more effectively.</p>
+            <div class="video-wrap">
+              <iframe
+                src="https://www.youtube.com/embed/R4POPOk48Eo"
+                title="Lab 5: Room"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                referrerpolicy="strict-origin-when-cross-origin"
+                allowfullscreen
+                loading="lazy">
+              </iframe>
+            </div>
+            <div class="reflection">
+              <p><strong>Reflection:</strong> This lab taught me how important data persistence is in real mobile applications. I learned how Room helps store, retrieve, update, and delete data in a structured way. Although database concepts were challenging at first, the lab helped me connect theory with practical app development.</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="projects">
+      <div class="container">
+        <div class="section-heading">
+          <span>Application Development</span>
+          <h2>Projects</h2>
+          <p>The projects show the development progress of VIORA CYCLE, an application idea aligned with SDG 3 by supporting personal health awareness and well-being.</p>
+        </div>
+
+        <div class="grid">
+          <article class="card project-card">
+            <span class="tag">Project 1</span>
+            <h3>VIORA CYCLE: Lab 4 + Working Features</h3>
+            <p><strong>Problem Statement:</strong> Many users need a simple and organised way to track cycle-related information and understand their personal health patterns. VIORA CYCLE aims to provide a clear mobile experience that supports awareness, planning, and healthier self-management.</p>
+            <div class="video-wrap">
+              <iframe
+                src="https://www.youtube.com/embed/Ah8rcSyeFsc"
+                title="Project 1 VIORA CYCLE YouTube VSR video"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                referrerpolicy="strict-origin-when-cross-origin"
+                allowfullscreen
+                loading="lazy">
+              </iframe>
+            </div>
+            <div class="reflection">
+              <p><strong>Lessons Learned:</strong> Project 1 helped me combine navigation, interface design, and working features into one complete application flow. I learned the importance of testing each screen carefully so users can move through the app without errors. This project also improved my confidence in turning a concept into a functional prototype.</p>
+            </div>
+            <a class="btn btn-primary" href="https://github.com/a212743-Manissha/A212743_Manissha_NazatulAini_Project1" target="_blank" rel="noopener noreferrer">View on GitHub</a>
+          </article>
+
+          <article class="card project-card">
+            <span class="tag">Project 2</span>
+            <h3>VIORA CYCLE: Lab 5 + API + Sensors + Cloud</h3>
+            <p><strong>Problem Statement:</strong> A health-focused application becomes more useful when it can store data, connect with external services, and use device features for smarter support. This project enhances VIORA CYCLE by adding database, API, sensor, and cloud-based functionality to improve reliability and user experience.</p>
+            <div class="video-wrap">
+              <iframe
+                src="https://www.youtube.com/embed/gA3bTk6jCiM"
+                title="Project 2 VIORA CYCLE YouTube VSR video"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                referrerpolicy="strict-origin-when-cross-origin"
+                allowfullscreen
+                loading="lazy">
+              </iframe>
+            </div>
+            <div class="reflection">
+              <p><strong>Lessons Learned:</strong> Project 2 taught me how different technologies can work together inside one mobile application. I learned that using local storage, cloud services, APIs, and sensors requires careful planning and testing. This project helped me understand the value of building apps that are not only functional but also scalable and practical.</p>
+            </div>
+            <a class="btn btn-primary" href="https://github.com/a212743-Manissha/A212743_Manissha_NazatulAini_Project1" target="_blank" rel="noopener noreferrer">View on GitHub</a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="reflection">
+      <div class="container">
+        <div class="section-heading">
+          <span>Personal Growth</span>
+          <h2>Reflection & Learning Journey</h2>
+        </div>
+
+        <div class="journey-box">
+          <p>
+            Throughout this course, I gained a stronger understanding of mobile application development and the process of building an app step by step. I started by learning basic UI design and gradually moved into interaction, Material Design, navigation, local databases, APIs, sensors, and cloud integration. The most valuable lesson was that a good application is not only about coding, but also about solving a real user problem with clear design and reliable features. This learning journey helped me become more confident, organised, and reflective as an IT student.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section id="skills">
+      <div class="container">
+        <div class="section-heading">
+          <span>Technical Ability</span>
+          <h2>Skills & Tech Stack</h2>
+          <p>The following tools and technologies were used or explored during my labs and project development.</p>
+        </div>
+
+        <ul class="skills-list" aria-label="Skills and technology stack">
+          <li>Kotlin</li>
+          <li>Android Studio</li>
+          <li>Jetpack Compose</li>
+          <li>Material Design</li>
+          <li>Navigation Component</li>
+          <li>Room Database</li>
+          <li>Retrofit</li>
+          <li>Firebase Firestore</li>
+          <li>Cloud Storage</li>
+          <li>Device Sensors</li>
+          <li>GitHub</li>
+          <li>GitHub Pages</li>
+          <li>HTML5</li>
+          <li>CSS3</li>
+          <li>JavaScript</li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="resources">
+      <div class="container">
+        <div class="section-heading">
+          <span>References & Support</span>
+          <h2>Resources</h2>
+          <p>These resources supported the development, documentation, and presentation of this e-Portfolio.</p>
+        </div>
+
+        <ul class="resources-list" aria-label="APIs, libraries, and support resources used">
+          <li>Android Developers Documentation</li>
+          <li>Material Design Guidelines</li>
+          <li>Room Persistence Library</li>
+          <li>Retrofit API Library</li>
+          <li>Firebase Firestore</li>
+          <li>Google Firebase Documentation</li>
+          <li>Device Sensor APIs</li>
+          <li>YouTube Embed Player</li>
+          <li>GitHub Repository Hosting</li>
+          <li>GitHub Pages Deployment</li>
+          <li>AI assistance was used to improve wording, reflections, and portfolio layout while the final content was reviewed and customised by the student.</li>
+        </ul>
+      </div>
+    </section>
+  </main>
+
+  <button class="back-top" type="button" aria-label="Back to top">↑</button>
+
+  <footer>
+    <div class="container">
+      <p><strong>MANISSHA RAJASEGAR</strong></p>
+      <p>Matric No: A212743 | Programme: IT</p>
+      <p>© 2026 Student e-Portfolio</p>
+    </div>
+  </footer>
+
+  <script>
+    const menuToggle = document.querySelector('.menu-toggle');
+    const navLinks = document.querySelector('#navLinks');
+    const backTop = document.querySelector('.back-top');
+
+    menuToggle.addEventListener('click', () => {
+      const isOpen = navLinks.classList.toggle('open');
+      menuToggle.setAttribute('aria-expanded', String(isOpen));
+    });
+
+    document.querySelectorAll('.nav-links a').forEach((link) => {
+      link.addEventListener('click', () => {
+        navLinks.classList.remove('open');
+        menuToggle.setAttribute('aria-expanded', 'false');
+      });
+    });
+
+    backTop.addEventListener('click', () => {
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+      });
+    });
+  </script>
+</body>
+</html>
